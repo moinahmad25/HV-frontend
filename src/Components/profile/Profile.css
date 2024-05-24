@@ -1,0 +1,45 @@
+.profile_section{
+    clip-path: circle(100% at 50% -30%);
+    border-radius: 8px 8px 0 0 ;
+    overflow: hidden ;
+}
+.bg_filter{
+    filter: blur(1px) brightness(70%);
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) hue-rotate(180deg);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    /* Change the icon color */
+}
+.btnApply:hover{
+    background: rgb(225, 225, 225);
+    color: #262044;
+    border: '1px solid white';
+}
+/* Add this to your CSS file */
+.blur-effect {
+    filter: blur(4px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.69);
+    z-index: 999;
+}
+
+.overlay l-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    /* Ensure loader is above overlay */
+}
