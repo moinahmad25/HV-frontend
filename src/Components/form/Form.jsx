@@ -54,13 +54,21 @@ const Form = () => {
     // post operation to verify with DB
     setLoading(true)
     try {
+      console.log('Attempting to connect to:', `/api/form/login (proxied to https://hv-backend-zeta.vercel.app)`);
+      console.log('Request body:', regNumber);
+      
       const response = await fetch(`https://hv-backend-zeta.vercel.app/api/form/login`, {
         method: "POST",
+        mode: 'cors',
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json",
         },
         body: JSON.stringify(regNumber),
       })
+
+      console.log('Response status:', response.status);
+      console.log('Response headers:', [...response.headers.entries()]);
 
       if (response.ok) {
         const result = await response.json();
@@ -70,10 +78,29 @@ const Form = () => {
         storeTokenToLocal(result.token)
         // storeEmailToLocal(result.email)
         setBtnNext(true)
+      } else {
+        // Log the error details
+        console.error('Login failed:', {
+          status: response.status,
+          statusText: response.statusText,
+          url: response.url
+        });
+        
+        try {
+          const errorData = await response.text();
+          console.error('Error response body:', errorData);
+        } catch (e) {
+          console.error('Could not read error response');
+        }
       }
 
     } catch (error) {
-      console.log("error on login, ", error)
+      console.error("Network error on login:", error);
+      
+      // Check if it's a CORS error
+      if (error.name === 'TypeError' && error.message.includes('fetch')) {
+        console.error('This might be a CORS issue. Check if your backend allows requests from this origin.');
+      }
     }
     finally{
       setLoading(false)

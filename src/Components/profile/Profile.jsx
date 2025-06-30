@@ -91,7 +91,7 @@ const Profile = () => {
 
   useEffect(() => {
     const gettingDetail = async () => {
-      const response = await fetch(`https://hv-backend-zeta.vercel.app/api/form/${id}`)
+      const response = await fetch(`/api/form/${id}`)
       const result = await response.json();
       console.log(result)
 
@@ -108,7 +108,7 @@ const Profile = () => {
 
     const getRoomAllocationDetail = async () => {
       try {
-        const response = await fetch(`https://hv-backend-zeta.vercel.app/api/form/${id}`)
+        const response = await fetch(`/api/form/${id}`)
         const result = await response.json();
         console.log(result)
         // setting user's room and hostel if they got allocated
@@ -135,7 +135,7 @@ const Profile = () => {
     const confirmedRooms = async () => {
 
       try {
-        const response = await fetch(`https://hv-backend-zeta.vercel.app/api/user/get-confirmed-rooms`)
+        const response = await fetch(`/api/user/get-confirmed-rooms`)
         const result = await response.json();
 
         setBhabhaRoom(result.message[0].allocatedRoomNumbers)
@@ -155,7 +155,7 @@ const Profile = () => {
 
   useEffect(() => {
     const getImage = async () => {
-      const response = await fetch(`https://hv-backend-zeta.vercel.app/api/form/get-image/${id}`)
+      const response = await fetch(`/api/form/get-image/${id}`)
       const result = await response.json();
       setImg(result);
     }
@@ -194,7 +194,7 @@ const Profile = () => {
 
     try {
       const response = await fetch(
-        `https://hv-backend-zeta.vercel.app/api/form/add-image/${id}`,
+        `/api/form/add-image/${id}`,
         {
           method: 'POST',
           body: formData,
@@ -227,7 +227,7 @@ const Profile = () => {
     setLoading(true)
 
     try {
-      const response = await fetch(`https://hv-backend-zeta.vercel.app/api/user/${id}/pending-room-booking`, {
+      const response = await fetch(`/api/user/${id}/pending-room-booking`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -320,7 +320,7 @@ const Profile = () => {
 
     try {
       const response = await fetch(
-        `https://hv-backend-zeta.vercel.app/api/form/add-receipt/${id}`,
+        `/api/form/add-receipt/${id}`,
         {
           method: 'POST',
           body: formData,
@@ -355,7 +355,7 @@ const Profile = () => {
   const handleGatePassClick = async () => {
     setLoading(true)
     try {
-      const response = await fetch(`https://hv-backend-zeta.vercel.app/api/form/apply-gate-pass/${id}`,
+      const response = await fetch(`/api/form/apply-gate-pass/${id}`,
         {
           method: 'POST',
           headers: {
