@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://hv-backend-zeta.vercel.app',
+        target: 'https://hv-backend.onrender.com',
         changeOrigin: true,
         secure: true,
       }

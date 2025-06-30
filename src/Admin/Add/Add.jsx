@@ -40,7 +40,7 @@ const Add = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await fetch(`https://hv-backend-zeta.vercel.app/api/admin/add`, {
+      const response = await fetch(`https://hv-backend.onrender.com/api/admin/add`, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",

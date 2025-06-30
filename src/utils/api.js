@@ -1,6 +1,6 @@
 // API configuration
 const API_BASE_URL = import.meta.env.PROD 
-  ? 'https://hv-backend-zeta.vercel.app' 
+  ? 'https://hv-backend.onrender.com' 
   : '/api';
 
 // Create a generic API function

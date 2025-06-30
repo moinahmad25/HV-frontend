@@ -54,10 +54,10 @@ const Form = () => {
     // post operation to verify with DB
     setLoading(true)
     try {
-      console.log('Attempting to connect to:', `/api/form/login (proxied to https://hv-backend-zeta.vercel.app)`);
+      console.log('Attempting to connect to:', `/api/form/login (proxied to https://hv-backend.onrender.com)`);
       console.log('Request body:', regNumber);
       
-      const response = await fetch(`https://hv-backend-zeta.vercel.app/api/form/login`, {
+      const response = await fetch(`https://hv-backend.onrender.com/api/form/login`, {
         method: "POST",
         mode: 'cors',
         headers: {

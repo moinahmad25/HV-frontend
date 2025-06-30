@@ -26,7 +26,7 @@ const Detail = () => {
     useEffect(() => {
         const studentDetail = async () => {
             try {
-                const response = await fetch(`https://hv-backend-zeta.vercel.app/api/form/${id}`)
+                const response = await fetch(`https://hv-backend.onrender.com/api/form/${id}`)
                 const result = await response.json()
                 // console.log(result)
                 setDetail(result.isRegistrationValid)
@@ -54,7 +54,7 @@ const Detail = () => {
     const handleClick =async () => {
         setLoading(true)
         try {
-            const response = await fetch(`https://hv-backend-zeta.vercel.app/api/form/${id}/generate-otp`, {
+            const response = await fetch(`https://hv-backend.onrender.com/api/form/${id}/generate-otp`, {
                 method: "POST"
             })
 

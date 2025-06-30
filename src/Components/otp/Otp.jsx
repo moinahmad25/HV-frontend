@@ -21,7 +21,7 @@ const Otp = () => {
     useEffect(() => {
         const studentDetail = async () => {
             try {
-                const response = await fetch(`https://hv-backend-zeta.vercel.app/api/form/${id}`)
+                const response = await fetch(`https://hv-backend.onrender.com/api/form/${id}`)
                 const result = await response.json()
 
 
@@ -54,7 +54,7 @@ const Otp = () => {
         setLoading(true)
 
         try {
-            const response = await fetch(`https://hv-backend-zeta.vercel.app/api/form/${id}/otp-verification`, {
+            const response = await fetch(`https://hv-backend.onrender.com/api/form/${id}/otp-verification`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -114,7 +114,7 @@ const Otp = () => {
     const handleReset = async () => {
         setLoading(true)
         try {
-            const response = await fetch(`https://hv-backend-zeta.vercel.app/api/form/${id}/resend-otp`,{
+            const response = await fetch(`https://hv-backend.onrender.com/api/form/${id}/resend-otp`,{
                 method:'POST'
             })
 

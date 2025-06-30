@@ -44,7 +44,7 @@ const Messages = () => {
 
   const getMessage = async () => {
     try {
-      const response = await fetch(`https://hv-backend-zeta.vercel.app/api/admin/get-room-allocation-detail`)
+      const response = await fetch(`https://hv-backend.onrender.com/api/admin/get-room-allocation-detail`)
       const result = await response.json();
       console.log(result)
 
@@ -58,7 +58,7 @@ const Messages = () => {
 
   const getGatePass = async () => {
     try {
-      const response = await fetch(`https://hv-backend-zeta.vercel.app/api/admin/gate-pass-request`)
+      const response = await fetch(`https://hv-backend.onrender.com/api/admin/gate-pass-request`)
       const result = await response.json();
 
       // console.log(result)
@@ -129,7 +129,7 @@ const Messages = () => {
   const sendConfirmation = async () => {
     setLoading(true)
     try {
-      const response = await fetch(`https://hv-backend-zeta.vercel.app/api/admin/booking-confirmation/${user.registrationNumber}`, {
+      const response = await fetch(`https://hv-backend.onrender.com/api/admin/booking-confirmation/${user.registrationNumber}`, {
         method: 'POST',
       })
 
@@ -149,7 +149,7 @@ const Messages = () => {
   const handleCancellation = async () => {
     setLoading(true)
     try {
-      const response = await fetch(`https://hv-backend-zeta.vercel.app/api/admin/cancel-booking/${user.registrationNumber}`, {
+      const response = await fetch(`https://hv-backend.onrender.com/api/admin/cancel-booking/${user.registrationNumber}`, {
         method: 'POST'
       })
 
@@ -182,7 +182,7 @@ const Messages = () => {
   const handleAllow = async () => {
     setLoading(true)
     try {
-      const response = await fetch(`https://hv-backend-zeta.vercel.app/api/admin/gate-pass-confirmation/${passUser.registrationNumber}`, {
+      const response = await fetch(`https://hv-backend.onrender.com/api/admin/gate-pass-confirmation/${passUser.registrationNumber}`, {
         method: 'POST'
       })
 
