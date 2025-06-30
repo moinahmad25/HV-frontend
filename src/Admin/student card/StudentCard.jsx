@@ -26,7 +26,7 @@ const StudentCard = (props) => {
         const registrationNumber = props.regNumber;
 
         try {
-            const response = await fetch(`https://hv-backend.onrender.com/api/admin/${props.regNumber}`,{
+            const response = await fetch(`https://hv-backend-zeta.vercel.app/api/admin/${props.regNumber}`,{
                 method:"DELETE"
             });
 

@@ -54,7 +54,7 @@ const Form = () => {
     // post operation to verify with DB
     setLoading(true)
     try {
-      const response = await fetch(`https://hv-backend.onrender.com/api/form/login`, {
+      const response = await fetch(`https://hv-backend-zeta.vercel.app/api/form/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

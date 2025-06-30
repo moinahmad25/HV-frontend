@@ -39,7 +39,7 @@ const EditStudent = (props) => {
     const handleUpdate = async() => {
         setLoading(true)
         try {
-            const response = await fetch(`https://hv-backend.onrender.com/api/admin/update-detail/${props.regNumber}`, {
+            const response = await fetch(`https://hv-backend-zeta.vercel.app/api/admin/update-detail/${props.regNumber}`, {
                 method: 'PATCH',
                 headers : {
                     "Content-Type": "application/json",

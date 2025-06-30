@@ -27,7 +27,7 @@ const Remove = () => {
     setLoading(true)
 
     try {
-      const response = await fetch(`https://hv-backend.onrender.com/api/admin/get-detail/${regNumber}`)
+      const response = await fetch(`https://hv-backend-zeta.vercel.app/api/admin/get-detail/${regNumber}`)
       const result = await response.json();
 
       setDetail(result.isRegistrationValid)

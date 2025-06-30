@@ -16,7 +16,7 @@ const Home = () => {
         const getData = async () => {
             // setLoading(true)
             try {
-                const response = await fetch(`https://hv-backend.onrender.com/api/admin/total-students?page=${pageNo}`)
+                const response = await fetch(`https://hv-backend-zeta.vercel.app/api/admin/total-students?page=${pageNo}`)
                 const result = await response.json();
 
                 setDataLength(result.length)
@@ -38,7 +38,7 @@ const Home = () => {
         const getData = async () => {
             setLoading(true)
             try {
-                const response = await fetch(`https://hv-backend.onrender.com/api/admin/total-students?page=${pageNo}`)
+                const response = await fetch(`https://hv-backend-zeta.vercel.app/api/admin/total-students?page=${pageNo}`)
                 const result = await response.json();
 
                 console.log(result.students)
